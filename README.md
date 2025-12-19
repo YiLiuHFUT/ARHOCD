@@ -28,23 +28,23 @@ Adversarial samples are generated based on the TextAttack framework: https://git
 
 ## Usage
 
-1. Train base detectors
+1. Train base detectors: 
 To train multiple initial base detectors, run the script Method/standard_training.py.
 This step produces several independently trained base detectors.
 
-2. Generate adversarial samples
+2. Generate adversarial samples: 
 To generate adversarial samples for each base detectors, use the TextAttack framework: https://github.com/QData/TextAttack.
 This step produces adversarial examples.
 
-3. Generate samples with the same meaning by LLaMA
+3. Generate samples with the same meaning by LLaMA: 
 To generate samples with the same semantic meaning, use Method/llama_sample_generation.py.
 This step produces multiple samples with the same meaning for each original input.
 
-4. Train the proposed weight assignment method
+4. Train the proposed weight assignment method: 
 To perform the proposed weight assignment method for the base detectors, use the Method/ours_bayesian_ensemble.py.
 This step produces the trained weight assignor.
 
-5. Iterative adversarial training
+5. Iterative adversarial training: 
 To perform the proposed iterative adversarial training strategy for both the base detectors and the weight assignor, alternately run
 Method/iterative_adversarial_training.py and Method/ours_bayesian_ensemble.py.
 This step produces the trained ARHOCD model.
